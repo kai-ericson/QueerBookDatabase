@@ -6,6 +6,7 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './component.header.html',
+  styleUrl: './component.header.css'
 })
 export class app_header {
   title = 'header';
