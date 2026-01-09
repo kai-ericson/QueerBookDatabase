@@ -3,10 +3,8 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  template: `<h1>Hello World!<h1>`,
-  /*templateUrl: './app.component.html',*/
-  styleUrl: './app.component.css'
+  templateUrl: './components/component.homepage.html',
+  styleUrl: './components/component.homepage.css'
 })
 export class AppComponent {
   title = 'qbd-frontend';
