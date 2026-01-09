@@ -6,6 +6,12 @@ main{
     --dark-green: #416244;
     background: var(--dark-gray);
 }
-.text{
-    color: var(--light-gray);
+h1{
+    color: var(--dark-purple);
+}
+.filter{
+    background: var(--light-purple);
+}
+.book_list{
+    background: var(--light-purple);
 }
