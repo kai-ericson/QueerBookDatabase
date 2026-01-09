@@ -1,0 +1,11 @@
+main{
+     --dark-purple: #4A2040;
+    --light-purple: #BAACBD;
+    --dark-gray: #554E52;
+    --light-gray: #C9C5CB;
+    --dark-green: #416244;
+    background: var(--dark-gray);
+}
+.text{
+    color: var(--light-gray);
+}
