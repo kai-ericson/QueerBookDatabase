@@ -1,0 +1,38 @@
+footer{
+    --dark-purple: #4A2040;
+    --light-purple: #BAACBD;
+    --dark-gray: #554E52;
+    --light-gray: #C9C5CB;
+    --dark-green: #416244;
+    display: flex;
+    width: 100%;
+    background: var(--dark-purple);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem 1rem 2rem 1rem;
+}
+h5{
+    color: var(--light-gray);
+    font-size: 20px;
+    font-weight: normal;
+    padding-left: 2.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+ul{
+    list-style-type: none;
+    margin-top:0rem;
+    padding-top: 0rem;
+}
+li{
+    padding-bottom:0.5rem;
+}
+
+a{
+    text-emphasis: none;
+    text-decoration: none;
+    color: var(--light-gray);
+    
+}
+a:hover{
+    text-decoration: underline;
+}
