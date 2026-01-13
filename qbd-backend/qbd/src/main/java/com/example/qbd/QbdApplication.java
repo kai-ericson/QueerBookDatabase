@@ -9,6 +9,5 @@ public class QbdApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(QbdApplication.class, args);
-		MongoClientConnection.connect();
 	}
 }
