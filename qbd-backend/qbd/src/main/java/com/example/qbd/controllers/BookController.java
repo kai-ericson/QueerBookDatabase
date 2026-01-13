@@ -1,5 +1,6 @@
 package com.example.qbd.controllers;
 
+import com.example.qbd.BookDTO;
 import com.example.qbd.enteties.Book;
 import com.example.qbd.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,8 @@ public class BookController {
         this.bookService = bookService;
     }
     @GetMapping("/books")
-    public List<Book> getAllBooks() {
+    public List<BookDTO> getAllBooks() {
         return bookService.getBooks();
     }
-    /*
-     * TODO: Make into BookDTO format
-     */
+
 }
