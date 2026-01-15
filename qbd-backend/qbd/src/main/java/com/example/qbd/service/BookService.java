@@ -33,19 +33,19 @@ public class BookService {
         String[] representationList = representation.split(",");
         List<Tag> tagList = new ArrayList<>();
         for (String g : genreList){
-            tagList.add(stringToTag(g, genre));
+            tagList.add(stringToTag(g, "Genre"));
         }
         for(String r : representationList){
-            tagList.add(stringToTag(r, genre));
+            tagList.add(stringToTag(r, "Representation"));
         }
        return tagList;
     }
 
     public Tag stringToTag(String tag, String type) {
         TagType tagType = null;
-        if(type.equals("representation")){
+        if(type.equals("Representation")){
             tagType = TagType.Representation;
-        }else if(type.equals("genre")){
+        }else if(type.equals("Genre")){
             tagType = TagType.Genre;
         }
         if(tagType==null){
@@ -56,7 +56,7 @@ public class BookService {
 
     public LocalDate stringToDate(String date){
         DateTimeFormatter formatter
-                = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                = DateTimeFormatter.ofPattern("yyyyMMdd");
         return LocalDate.parse(date, formatter);
     }
 

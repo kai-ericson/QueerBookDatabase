@@ -8,4 +8,8 @@ public class Tag {
         this.title = title;
         this.type = type;
     }
+    @Override
+    public String toString() {
+        return title + " " + type.toString();
+    }
 }

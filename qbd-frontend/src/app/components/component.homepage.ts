@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { app_book_list } from "./component.book_list";
 
 @Component({
   selector: 'app-startpage',
+  imports: [app_book_list],
   standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './component.homepage.html',
   styleUrl: './component.homepage.css'
 })
