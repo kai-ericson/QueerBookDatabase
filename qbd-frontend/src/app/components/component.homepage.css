@@ -5,13 +5,12 @@ main{
     --light-gray: #C9C5CB;
     --dark-green: #416244;
     background: var(--dark-gray);
+    display: grid;
+    grid-template-columns: 30% 70%;
 }
 h1{
     color: var(--dark-purple);
 }
 .filter{
-    background: var(--light-purple);
-}
-.book_list{
     background: var(--light-purple);
 }
