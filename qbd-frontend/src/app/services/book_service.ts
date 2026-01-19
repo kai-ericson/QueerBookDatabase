@@ -17,6 +17,10 @@ export class BookService {
     getBooks(page: number, size: number){
             return this.http.get<Page<Book>>(`${this.apiUrl}?page=${page}&size=${size}`);
     }
+
+    getBookById(id: String){
+        return this.http.get<Book>(`${this.apiUrl}/${id}`);
+    }
     
 }
 
