@@ -1,10 +1,10 @@
 export interface Book{
-    id: String;
-    title: String;
-    author: String
-    description: String;
+    id: string;
+    title: string;
+    author: string
+    description: string;
     tags: [];
     publicationDate: Date;
-    language: String;
-    series: String;
+    language: string;
+    series: string;
 }
