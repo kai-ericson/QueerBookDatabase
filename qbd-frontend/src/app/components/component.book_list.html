@@ -13,7 +13,7 @@
     </ul>
 
     <div class = "pagination">
-        <button 
+        <button class = "pagination_button" 
          (click)="prevPage()"
          [disabled]="currentPage === 0">
             Previous
@@ -21,7 +21,7 @@
         <span>
             Page {{ currentPage + 1 }} of {{ totalPages }}
         </span>
-        <button
+        <button class = "pagination_button" 
          (click) = "nextPage()"
          [disabled] = "currentPage >= totalPages - 1">
             Next

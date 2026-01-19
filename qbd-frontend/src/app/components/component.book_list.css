@@ -26,6 +26,20 @@ article{
     grid-template-areas:"title ."
                         "author button" ;
 }
+
+.pagination{
+   
+    width: 50%;
+    margin: auto;
+}
+
+.pagination_button{
+    width: 7rem;
+}
+
+span{
+    padding-right: 1rem;
+}
 h1{
     text-align: center;
 }
