@@ -3,8 +3,12 @@ package com.example.qbd.service;
 import com.example.qbd.BookDTO;
 import com.example.qbd.Tag;
 import com.example.qbd.TagType;
+import com.example.qbd.enteties.Book;
 import com.example.qbd.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -21,11 +25,9 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public List<BookDTO> getBooks() {
-        return bookRepository.findAll().stream()
-                .map(book -> new BookDTO(book.getId(), book.getTitle(), book.getAuthor(), book.getSynopsis(),
-                        makeTagList(book.getGenre(), book.getRepresentation()), stringToDate(book.getPublicationDate()),
-                        book.getLanguage(), book.getSeries())).toList();
+    public Page<BookDTO> getBooks(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        return bookRepository.findAll(pageable).map(this::toDto);
     }
 
     public List<Tag> makeTagList(String genre, String representation) {
@@ -58,6 +60,13 @@ public class BookService {
         DateTimeFormatter formatter
                 = DateTimeFormatter.ofPattern("yyyyMMdd");
         return LocalDate.parse(date, formatter);
+    }
+
+    private BookDTO toDto(Book book){
+        return new BookDTO(book.getId(), book.getTitle(), book.getAuthor(), book.getSynopsis(),
+                makeTagList(book.getGenre(), book.getRepresentation()), stringToDate(book.getPublicationDate()),
+                book.getLanguage(), book.getSeries());
+
     }
 
 }

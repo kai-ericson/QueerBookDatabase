@@ -1,12 +1,30 @@
  <article>
     <h1>Books</h1>
     <ul class="book_list">
-        @for (book of books(); track book.id){
+        @for (book of books; track book.id){
             <div class="book_list_item">
                 <h3>{{ book.title }}</h3>
                 <p>{{ book.author }}</p>
                 <button>Read more</button>
             </div>
+        } @empty {
+            <h3>No books found.</h3>
         }
     </ul>
+
+    <div class = "pagination">
+        <button class = "pagination_button" 
+         (click)="prevPage()"
+         [disabled]="currentPage === 0">
+            Previous
+        </button>
+        <span>
+            Page {{ currentPage + 1 }} of {{ totalPages }}
+        </span>
+        <button class = "pagination_button" 
+         (click) = "nextPage()"
+         [disabled] = "currentPage >= totalPages - 1">
+            Next
+        </button>
+    </div>
 </article>
