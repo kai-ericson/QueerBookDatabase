@@ -1,0 +1,9 @@
+<div class="modal_backdrop">
+    <div class="modal">
+    @if (book$ | async; as book) {
+        <h2>{{ book.title }}</h2>
+    } @else {
+        <p>Loading book...</p>
+    }
+    </div>
+</div>
