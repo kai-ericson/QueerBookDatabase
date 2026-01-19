@@ -15,8 +15,6 @@ export class BookService {
     constructor(private http:HttpClient) {}
 
     getBooks(page: number, size: number){
-        /*return this.http.get<Book[]>(this.apiUrl).pipe(
-            tap((books: Book[])=> {console.log('Book from server:', books)})*/
             return this.http.get<Page<Book>>(`${this.apiUrl}?page=${page}&size=${size}`);
     }
     
