@@ -25,4 +25,9 @@ public class BookController {
         return bookService.getBooks(page, size);
     }
 
+    @GetMapping("/{id}")
+    public BookDTO getBook(@PathVariable String id) {
+        return bookService.getBookById(id);
+    }
+
 }
