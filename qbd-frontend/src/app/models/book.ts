@@ -1,10 +1,11 @@
+import { tag } from "../tags/tag";
 export interface Book{
-    id: String;
-    title: String;
-    author: String
-    description: String;
-    tags: [];
+    id: string;
+    title: string;
+    author: string
+    description: string;
+    tags: tag[];
     publicationDate: Date;
-    language: String;
-    series: String;
+    language: string;
+    series: string;
 }

@@ -22,11 +22,13 @@ public class BookController {
     public Page<BookDTO> getAllBooks(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
+        System.out.println("PAGINATED endpoint hit");
         return bookService.getBooks(page, size);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/books/{id}")
     public BookDTO getBook(@PathVariable String id) {
+        System.out.println("BY ID endpoint hit with id: " + id);
         return bookService.getBookById(id);
     }
 

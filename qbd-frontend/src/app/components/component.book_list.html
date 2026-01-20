@@ -5,13 +5,18 @@
             <div class="book_list_item">
                 <h3>{{ book.title }}</h3>
                 <p>{{ book.author }}</p>
-                <button>Read more</button>
+                <button (click)="openModal(book.id)">Read more</button>
             </div>
         } @empty {
             <h3>No books found.</h3>
         }
     </ul>
-
+    @if (selectedBookId) {
+        <app_book_details
+        [bookId] = "selectedBookId"
+        (closed) = "closeModal()">
+        </app_book_details>
+    }
     <div class = "pagination">
         <button class = "pagination_button" 
          (click)="prevPage()"
