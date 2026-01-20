@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Book } from '../models/book';
-import { Page } from '../Page';
+import { Page } from '../page';
 
 @Injectable({
     providedIn: 'root'
