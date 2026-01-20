@@ -31,9 +31,7 @@ export class book_details{
 
     fetchBook(): Observable<Book> {
         if(!this.bookId) return of(null as any);
-        return this.bookService.getBookById(this.bookId).pipe(
-            tap(() => console.log("Fetched book", this.bookId))
-        );
+        return this.bookService.getBookById(this.bookId);
     }
 
     close(){
