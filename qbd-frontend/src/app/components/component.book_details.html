@@ -2,6 +2,9 @@
     <div class="modal">
     @if (book$ | async; as book) {
         <h2>{{ book.title }}</h2>
+        <h3>{{ book.author }}</h3>
+        <p class="publication_date">{{ book.publicationDate }}</p>
+        <p>{{ book.description }}</p>
     } @else {
         <p>Loading book...</p>
     }
