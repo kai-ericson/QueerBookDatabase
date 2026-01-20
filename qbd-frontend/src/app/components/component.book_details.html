@@ -1,11 +1,20 @@
 <div class="modal_backdrop">
     <div class="modal">
     @if (book$ | async; as book) {
-        <button class="close_button" (click)="close()">&#10005;</button>
-        <h2>{{ book.title }}</h2>
-        <h3>{{ book.author }}</h3>
-        <p class="publication_date">{{ book.publicationDate }}</p>
-        <p>{{ book.description }}</p>
+        <div class="book_details">
+            <button class="close_button" (click)="close()">&#10005;</button>
+            <h2 class="title">{{ book.title }}</h2>
+            <h3 class="author">{{ book.author }}</h3>
+            <p class="publication_date">{{ book.publicationDate }}</p>
+            <p class="description">{{ book.description }}</p>
+        </div>
+        <div class="book_tags">
+            <ul>
+                @for (tag of book.tags; track tag.title){
+                        <li>{{ tag.title }}</li>
+                }
+            </ul>
+        </div>
     } @else {
         <p>Loading book...</p>
     }
