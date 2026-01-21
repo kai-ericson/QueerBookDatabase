@@ -27,9 +27,14 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public Page<BookDTO> getBooks(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        return bookRepository.findAll(pageable).map(this::toDto);
+    public Page<BookDTO> getBooks(List<String> tags, Pageable pageable) {
+        Page<Book> result;
+        if(tags == null || tags.isEmpty()) {
+            result = bookRepository.findAll(pageable);
+        }else{
+            result = bookRepository.findByTags(tags, pageable);
+        }
+        return result.map(this::toDto);
     }
 
     public BookDTO getBookById(String id) {
