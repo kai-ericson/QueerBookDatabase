@@ -58,10 +58,7 @@ public class BookService {
 
     public Tag stringToTag(String tag, String type) {
         TagType tagType = null;
-
         String tagCapitalized = tag.substring(0, 1).toUpperCase() + tag.substring(1).toLowerCase();
-        System.out.println("old tag: " + tag);
-        System.out.println("new tag: "+ tagCapitalized);
         if(type.equals("Representation")){
             tagType = TagType.Representation;
         }else if(type.equals("Genre")){
