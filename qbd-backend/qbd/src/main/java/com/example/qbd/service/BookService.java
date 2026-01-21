@@ -27,9 +27,14 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public Page<BookDTO> getBooks(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        return bookRepository.findAll(pageable).map(this::toDto);
+    public Page<BookDTO> getBooks(List<String> tags, Pageable pageable) {
+        Page<Book> result;
+        if(tags == null || tags.isEmpty()) {
+            result = bookRepository.findAll(pageable);
+        }else{
+            result = bookRepository.findByTags(tags, pageable);
+        }
+        return result.map(this::toDto);
     }
 
     public BookDTO getBookById(String id) {
@@ -58,10 +63,7 @@ public class BookService {
 
     public Tag stringToTag(String tag, String type) {
         TagType tagType = null;
-
         String tagCapitalized = tag.substring(0, 1).toUpperCase() + tag.substring(1).toLowerCase();
-        System.out.println("old tag: " + tag);
-        System.out.println("new tag: "+ tagCapitalized);
         if(type.equals("Representation")){
             tagType = TagType.Representation;
         }else if(type.equals("Genre")){
