@@ -36,7 +36,7 @@ public class BookService {
         if(tags != null && !tags.isEmpty()) {
             List<Criteria> tagCriteria = tags.stream()
                     .map(tag ->new Criteria().orOperator(
-                            Criteria.where("Genres").regex(tag, "i"),
+                            Criteria.where("Genre").regex(tag, "i"),
                             Criteria.where("Representation").regex(tag,"i")
                     )).toList();
             query.addCriteria(
