@@ -7,12 +7,14 @@ import com.example.qbd.enteties.Book;
 import com.example.qbd.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -22,19 +24,41 @@ import java.util.List;
 public class BookService {
     @Autowired
     private final BookRepository bookRepository;
+    private final MongoTemplate mongoTemplate;
 
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, MongoTemplate mongoTemplate) {
         this.bookRepository = bookRepository;
+        this.mongoTemplate = mongoTemplate;
     }
 
     public Page<BookDTO> getBooks(List<String> tags, Pageable pageable) {
-        Page<Book> result;
-        if(tags == null || tags.isEmpty()) {
+        Query query = new Query().with(pageable);
+        if(tags != null && !tags.isEmpty()) {
+            List<Criteria> tagCriteria = tags.stream()
+                    .map(tag ->new Criteria().orOperator(
+                            Criteria.where("Genres").regex(tag, "i"),
+                            Criteria.where("Representation").regex(tag,"i")
+                    )).toList();
+            query.addCriteria(
+                    new Criteria().orOperator(tagCriteria.toArray(new Criteria[0]))
+            );
+        }
+        List<Book> books = mongoTemplate.find(query, Book.class);
+        long total = mongoTemplate.count(
+                Query.of(query).limit(0).skip(0),
+                Book.class
+        );
+        return new PageImpl<>(
+                books.stream().map(this::toDto).toList(),
+                pageable,
+                total
+        );
+        /*if(tags == null || tags.isEmpty()) {
             result = bookRepository.findAll(pageable);
         }else{
             result = bookRepository.findByTags(tags, pageable);
         }
-        return result.map(this::toDto);
+        return result.map(this::toDto);*/
     }
 
     public BookDTO getBookById(String id) {
