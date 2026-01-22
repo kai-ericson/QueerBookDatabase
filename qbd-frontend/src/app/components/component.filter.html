@@ -1,46 +1,19 @@
 <section class="filter">
     <h1>Filter</h1>
     <div>
-        <h3>Representation</h3>
-        <input type="checkbox" id="gay" name="representation" value="Gay">
-        <label>Gay</label>
-        <input type="checkbox" id="trans" name="representation" value="Trans">
-        <label>Trans</label>
-        <input type="checkbox" id="bisexual" name="representation" value="Bisexual">
-        <label>Bisexual</label>
-        <input type="checkbox" id="nonbinary" name="representation" value="Nonbinary">
-        <label>Nonbinary</label>
-        <input type="checkbox" id="asexual" name="representation" value="Asexual">
-        <label>Asexual</label>
-        <input type="checkbox" id="aromantic" name="representation" value="Aromantic">
-        <label>Aromantic</label>
-        <input type="checkbox" id="polyamory" name="representation" value="Polyamory">
-        <label>Polyamory</label>
-        <input type="checkbox" id="achillean" name="representation" value="Achillean">
-        <label>Achillean</label>
-        <input type="checkbox" id="sapphic" name="representation" value="Sapphic">
-        <label>Sapphic</label>
+        @for(type of ['Representation', 'Genre']; track type){
+            <h3>{{ type }}</h3>
+        
+            @for (tag of availableTags; track tag.title) {
+                @if(tag.type === type){
+                    <label>
+                        <input type="checkbox"
+                        [checked]="selectedTagTitles.has(tag.title)"
+                        (change)="toggleTag(tag)"/>
+                        {{ tag.title }}
+                    </label>
+                }
+            }
+        }
     </div>
-    <div>
-        <h3>Genre</h3>
-        <input type="checkbox" id="contemporary" name="genre" value="Contemporary">
-        <label>Contemporary</label>
-        <input type="checkbox" id="romance" name="genre" value="Romance">
-        <label>Romance</label>
-        <input type="checkbox" id="manga" name="genre" value="Manga">
-        <label>Manga</label>
-        <input type="checkbox" id="middle_grade" name="genre" value="Middle grade">
-        <label>Middle grade</label>
-        <input type="checkbox" id="urban_fantasy" name="genre" value="Urban fantasy">
-        <label>Urban fantasy</label>
-        <input type="checkbox" id="young_adult" name="genre" value="Young adult">
-        <label>Young adult</label>
-        <input type="checkbox" id="fantasy" name="genre" value="Fantasy">
-        <label>Fantasy</label>
-        <input type="checkbox" id="historical" name="genre" value="Historical">
-        <label>Historical</label>
-        <input type="checkbox" id="grapgic_novel" name="genre" value="Graphic novel">
-        <label>Graphic novel</label>
-    </div>
-    <button>Search</button>
 </section>
