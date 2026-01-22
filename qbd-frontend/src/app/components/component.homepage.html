@@ -1,4 +1,11 @@
 <main class="main">
-    <app_book_filter></app_book_filter>
-    <app-book-list></app-book-list>
+    <app_book_filter
+    [availableTags]="availableTags"
+    [selectedTagTitles]="selectedTagTitles"
+    (selectedTagsChange)="selectedTagsChange($event)"
+    ></app_book_filter>
+    <app-book-list
+    [books]="books"
+    [totalPages]="totalPages"
+    [currentPage]="currentPage"></app-book-list>
 </main>
