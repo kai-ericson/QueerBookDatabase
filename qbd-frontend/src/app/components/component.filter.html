@@ -3,17 +3,19 @@
     <div>
         @for(type of ['Representation', 'Genre']; track type){
             <h3>{{ type }}</h3>
-        
-            @for (tag of availableTags; track tag.title) {
-                @if(tag.type === type){
-                    <label>
-                        <input type="checkbox"
-                        [checked]="selectedTagTitles.has(tag.title)"
-                        (change)="toggleTag(tag)"/>
-                        {{ tag.title }}
-                    </label>
+            <div class="tags">
+                @for (tag of availableTags; track tag.title) {
+                    @if(tag.type === type){
+                        <label class="checkbox">
+                            <input type="checkbox"
+                            [checked]="selectedTagTitles.has(tag.title)"
+                            (change)="toggleTag(tag)"/>
+                            <span class="checkmark"></span>
+                            {{ tag.title }}
+                        </label>
+                    }
                 }
-            }
+            </div>
         }
     </div>
 </section>
