@@ -40,7 +40,7 @@ public class BookService {
                             Criteria.where("Representation").regex(tag,"i")
                     )).toList();
             query.addCriteria(
-                    new Criteria().orOperator(tagCriteria.toArray(new Criteria[0]))
+                    new Criteria().andOperator(tagCriteria.toArray(new Criteria[0]))
             );
         }
         List<Book> books = mongoTemplate.find(query, Book.class);
@@ -53,12 +53,6 @@ public class BookService {
                 pageable,
                 total
         );
-        /*if(tags == null || tags.isEmpty()) {
-            result = bookRepository.findAll(pageable);
-        }else{
-            result = bookRepository.findByTags(tags, pageable);
-        }
-        return result.map(this::toDto);*/
     }
 
     public BookDTO getBookById(String id) {
