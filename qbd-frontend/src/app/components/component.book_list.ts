@@ -2,7 +2,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { book_details } from './component.book_details';
 import { Book } from '../models/book';
-import { tag } from '../tags/tag';
 
 @Component({
     selector: 'app-book-list',

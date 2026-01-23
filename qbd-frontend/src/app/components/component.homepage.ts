@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { app_book_list } from "./component.book_list";
 import { app_book_filter } from "./component.filter";
 import { BookService } from '../services/book_service';
