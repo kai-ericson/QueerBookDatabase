@@ -7,5 +7,7 @@
     <app-book-list
     [books]="books"
     [totalPages]="totalPages"
-    [currentPage]="currentPage"></app-book-list>
+    [currentPage]="currentPage"
+    (next)="next()"
+    (prev)="prev()"></app-book-list>
 </main>

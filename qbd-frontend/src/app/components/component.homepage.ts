@@ -63,14 +63,14 @@ export class app_startpage {
       this.loadBooks();
     }
 
-    nextPage(){
+    next(){
         if(this.currentPage < this.totalPages - 1){
             this.currentPage++;
             this.loadBooks();
         }
     }
 
-    prevPage(){
+    prev(){
         if(this.currentPage > 0){
             this.currentPage --;
             this.loadBooks();
