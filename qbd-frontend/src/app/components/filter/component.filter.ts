@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { tag } from '../../tags/tag';
+import { tag } from '../../models/tag';
 
 @Component({
     selector:'app-book-filter',
