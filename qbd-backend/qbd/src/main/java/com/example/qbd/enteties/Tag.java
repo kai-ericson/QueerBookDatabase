@@ -1,4 +1,6 @@
-package com.example.qbd;
+package com.example.qbd.enteties;
+
+import com.example.qbd.TagType;
 
 public class Tag {
     String title;
@@ -15,10 +17,5 @@ public class Tag {
 
     public TagType getType() {
         return type;
-    }
-
-    @Override
-    public String toString() {
-        return title + " " + type.toString();
     }
 }
