@@ -1,5 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
 html, body{
+    --dark-purple: #4A2040;
+    --light-purple: #BAACBD;
+    --dark-gray: #554E52;
+    --light-gray: #C9C5CB;
+    --dark-green: #416244;
     margin: 0;
     padding: 0;
     width: 100%;

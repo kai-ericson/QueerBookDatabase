@@ -1,9 +1,4 @@
 article{
-    --dark-purple: #4A2040;
-    --light-purple: #BAACBD;
-    --dark-gray: #554E52;
-    --light-gray: #C9C5CB;
-    --dark-green: #416244;
     color: var(--light-purple);
     font-family: Arial, Helvetica, sans-serif;
     padding: 1rem 1rem 1rem 0rem;
@@ -39,14 +34,17 @@ article{
 span{
     padding-right: 1rem;
 }
+
 h1{
     text-align: center;
 }
+
 h3{
     grid-area: title;
     margin: 0.5rem 0rem 0rem 0.5rem;
     padding: 0rem;
 }
+
 button{
     grid-area: button;
     margin-top: auto;
@@ -61,6 +59,7 @@ button{
     color: var(--dark-purple);
     cursor: pointer;
 }
+
 p{
     grid-area: author;
     margin: 0.5rem 0rem 0.5rem 0.5rem;
