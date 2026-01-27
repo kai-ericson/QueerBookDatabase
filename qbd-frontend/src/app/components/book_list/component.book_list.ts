@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { book_details } from './component.book_details';
-import { Book } from '../models/book';
+import { book_details } from '../book_details/component.book_details';
+import { Book } from '../../models/book';
 
 @Component({
     selector: 'app-book-list',
@@ -12,9 +12,7 @@ import { Book } from '../models/book';
 })
 export class app_book_list{
     title = 'book-list';
-   // @Input({ required: true }) selectedBookId!: string | null;
     @Input({ required: true }) books: Book[] = [];
-   // @Input({ required: true }) page: number = 0;
     @Input({ required: true }) totalPages: number = 0;
     @Input({ required: true }) currentPage: number = 0;
 

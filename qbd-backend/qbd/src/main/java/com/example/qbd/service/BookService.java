@@ -1,11 +1,10 @@
 package com.example.qbd.service;
 
 import com.example.qbd.BookDTO;
-import com.example.qbd.Tag;
+import com.example.qbd.enteties.Tag;
 import com.example.qbd.TagType;
 import com.example.qbd.enteties.Book;
 import com.example.qbd.repositories.BookRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -22,7 +21,7 @@ import java.util.List;
 
 @Service
 public class BookService {
-    @Autowired
+
     private final BookRepository bookRepository;
     private final MongoTemplate mongoTemplate;
 

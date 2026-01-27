@@ -12,10 +12,10 @@
         }
     </ul>
     @if (selectedBookId) {
-        <app_book_details
+        <app-book-details
         [bookId] = "selectedBookId"
         (closed) = "closeModal()">
-        </app_book_details>
+        </app-book-details>
     }
     <div class = "pagination">
         <button class = "pagination_button" 

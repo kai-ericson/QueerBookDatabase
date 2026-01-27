@@ -1,9 +1,9 @@
-import { Component, effect, Input, Output, EventEmitter, input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { tag } from '../tags/tag';
+import { tag } from '../../models/tag';
 
 @Component({
-    selector:'app_book_filter',
+    selector:'app-book-filter',
     standalone: true,
     imports: [CommonModule],
     templateUrl: './component.filter.html',

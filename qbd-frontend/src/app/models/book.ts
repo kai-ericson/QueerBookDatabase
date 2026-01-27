@@ -1,4 +1,4 @@
-import { tag } from "../tags/tag";
+import { tag } from "./tag";
 export interface Book{
     id: string;
     title: string;

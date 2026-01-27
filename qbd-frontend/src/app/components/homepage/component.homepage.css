@@ -1,0 +1,8 @@
+main{
+    background: var(--dark-gray);
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+h1{
+    color: var(--dark-purple);
+}

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { app_book_list } from "./component.book_list";
-import { app_book_filter } from "./component.filter";
-import { BookService } from '../services/book_service';
-import { Book } from '../models/book';
-import { tag_type } from '../tags/tag_type';
+import { app_book_list } from "../book_list/component.book_list";
+import { app_book_filter } from '../filter/component.filter';
+import { BookService } from '../../services/book_service';
+import { Book } from '../../models/book';
+import { tag_type } from '../../models/tag_type';
 
 @Component({
     selector: 'app-startpage',
@@ -53,7 +53,6 @@ export class app_startpage {
           .subscribe(page => {
            this.books = page.content;
            this.totalPages = page.totalPages;
-           //this.currentPage = page.number;
          })
     }
 
