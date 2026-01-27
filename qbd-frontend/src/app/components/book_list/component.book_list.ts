@@ -12,9 +12,7 @@ import { Book } from '../../models/book';
 })
 export class app_book_list{
     title = 'book-list';
-   // @Input({ required: true }) selectedBookId!: string | null;
     @Input({ required: true }) books: Book[] = [];
-   // @Input({ required: true }) page: number = 0;
     @Input({ required: true }) totalPages: number = 0;
     @Input({ required: true }) currentPage: number = 0;
 

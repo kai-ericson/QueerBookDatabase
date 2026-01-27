@@ -53,7 +53,6 @@ export class app_startpage {
           .subscribe(page => {
            this.books = page.content;
            this.totalPages = page.totalPages;
-           //this.currentPage = page.number;
          })
     }
 

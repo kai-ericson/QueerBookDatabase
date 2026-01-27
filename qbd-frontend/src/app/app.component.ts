@@ -10,6 +10,7 @@ import { app_footer } from "./components/footer/component.footer";
   imports: [RouterOutlet, app_header, app_startpage, app_footer],
   templateUrl: './app.component.html',
 })
+
 export class AppComponent {
   title = 'qbd-frontend';
 }
