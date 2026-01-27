@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { app_header } from './components/component.header';
-import { app_startpage } from './components/component.homepage';
-import { app_footer } from "./components/component.footer";
+import { app_header } from './components/header/component.header';
+import { app_startpage } from './components/homepage/component.homepage';
+import { app_footer } from "./components/footer/component.footer";
 
 @Component({
   standalone: true,

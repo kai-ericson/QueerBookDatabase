@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { book_details } from './component.book_details';
-import { Book } from '../models/book';
+import { book_details } from '../book_details/component.book_details';
+import { Book } from '../../models/book';
 
 @Component({
     selector: 'app-book-list',

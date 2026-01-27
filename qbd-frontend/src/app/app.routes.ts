@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { app_startpage } from './components/component.homepage';
-import { book_details } from './components/component.book_details';
+import { app_startpage } from './components/homepage/component.homepage';
+import { book_details } from './components/book_details/component.book_details';
 
 export const routes: Routes = [
     {path: '',redirectTo: 'books', pathMatch: 'full'},
